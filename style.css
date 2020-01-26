@@ -1,0 +1,11 @@
+.nav-wrapper {
+    background-color: rgb(73, 74, 80);
+}
+
+.collection a.collection-item {
+    color: rgb(73, 74, 80);
+}
+
+.input-field input[type=search] {
+    padding: 12px;
+}
