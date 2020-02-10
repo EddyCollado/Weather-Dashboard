@@ -1,129 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Weather or not, here is your weather</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather or not, here is your weather</title>
 </head>
+
 <body>
-    <nav>
+
+</body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Weather Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- Page Layout here -->
+  <div class="row">
+    <div class="col s12 m3">
+      <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">Weather Dashboard</a>
+          <div class="input-group mb-3"> 
+            <input id="searchTerm" type="text" class="form-control" placeholder="City name..." class="input-group-append">
+            <button id="searchBtn" class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-search"></i></button>
         </div>
-    </nav>
-      
-    <!-- Page Layout here -->
+        </div>
+      </nav>
+      <div class="collection">
+        <a href="#!" class="collection-item" id="clickable">Austin</a>
+        <a href="#!" class="collection-item" id="clickable">Chicago</a>
+        <!--deleted 'active'-->
+        <a href="#!" class="collection-item" id="clickable">New York</a>
+        <a href="#!" class="collection-item" id="clickable">Orlando</a>
+        <a href="#!" class="collection-item" id="clickable">San Francisco</a>
+        <a href="#!" class="collection-item" id="clickable">Seattle</a>
+        <a href="#!" class="collection-item" id="clickable">Denver</a>
+        <a href="#!" class="collection-item" id="clickable">Atlanta</a>
+      </div>
+    </div>
     <div class="row">
-        <div class="col s12 m3">
-            <nav>
-                <div class="nav-wrapper">
-                  <form>
-                    <div class="input-field">
-                      <input id="searchID" type="search" required>
-                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                      <i class="material-icons">close</i>
-                    </div>
-                  </form>
-                </div>
-              </nav>
-                <div class="collection">
-                    <a href="#!" class="collection-item">Austin</a>
-                    <a href="#!" class="collection-item">Chicago</a> <!--deleted 'active'-->
-                    <a href="#!" class="collection-item">New York</a>
-                    <a href="#!" class="collection-item">Orlando</a>
-                    <a href="#!" class="collection-item">San Francisco</a>
-                    <a href="#!" class="collection-item">Seattle</a>
-                    <a href="#!" class="collection-item">Denver</a>
-                    <a href="#!" class="collection-item">Atlanta</a>
-                  </div>
-           
-        </div>
-        <div class="row">
-        <div id="container">
+      <div id="container">
         <div class="col s8">
-                  <div class="col m12 l12">
-                    <div class="card">
-                      <div class="card-content">
-                        <span class="card-title">Denver(placeholder)</span>
-                        <h3><span id="city"></span></h3>
-                        <h6>Temperature: <span id="temperature"></span></h6>
-                        <h6>Humidity: <span id="humidity"></span></h6>
-                        <h6>Wind Speed: <span id="wind"></span></h6>
-                      </div>
-                    </div>
-                  </div>
+          <div class="col m12 l12">
+            <div class="card">
+              <div class="card-content">
+                <h3><span id="city" id="forecast"></span></h3>
+                <h6 id="weather-icon"></h6>
+                <h6><span id="temperature"></span></h6>
+                <h6><span id="humidity"></span></h6>
+                <h6><span id="wind"></span></h6>
+                <h6 id="UV-index"></h6>
+              </div>
+            </div>
+          </div>
         </div>
-  
-  
-        </div>
-          
-    
-        
-            <div class="row">
-                <div id="container">
-            <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
-              <!-- Teal page content
+      </div>
+      <div class="row">
+        <div id="container">
+          <div class="col s12 m8 l9">
+            <!-- Note that "m8 l9" was added -->
+            <!-- Teal page content
       
                     This content will be:
                 9-columns-wide on large screens,
                 8-columns-wide on medium screens,
                 12-columns-wide on small screens  -->
-                <h5>5-Day Forecast:</h5>
-                    <div class="col s2 m2">
-                      <div class="card-panel blue" id="day1">
-                        <span class="white-text">
-                        <h6>Temperature: <span id="temperature"></span></h6>
-                        <h6>Humidity: <span id="humidity"></span></h6>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="col s2 m2">
-                        <div class="card-panel blue" id="day2">
-                            <span class="white-text">
-                            <h6>Temperature: <span id="temperature"></span></h6>
-                            <h6>Humidity: <span id="humidity"></span></h6>
-                            </span>
-                          </div>
-                      </div>
-                      <div class="col s2 m2">
-                        <div class="card-panel blue" id="day3">
-                            <span class="white-text">
-                            <h6>Temperature: <span id="temperature"></span></h6>
-                            <h6>Humidity: <span id="humidity"></span></h6>
-                            </span>
-                          </div>
-                      </div>
-                      <div class="col s2 m2">
-                        <div class="card-panel blue" id="day4">
-                            <span class="white-text">
-                            <h6>Temperature: <span id="temperature"></span></h6>
-                            <h6>Humidity: <span id="humidity"></span></h6>
-                            </span>
-                          </div>
-                      </div>
-                      <div class="col s2 m2">
-                        <div class="card-panel blue" id="id=day5">
-                            <span class="white-text">
-                            <h6>Temperature: <span id="temperature"></span></h6>
-                            <h6>Humidity: <span id="humidity"></span></h6>
-                            </span>
-                          </div>
-                    
-            </div>
-      
+            <h5>5-Day Forecast:</h5>
+            <div id="dayForecast" class="row"> 
+            </div> 
           </div>
         </div>
-            
-          </div>  
-          
-        </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>    
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js"></script>
 
 </body>
+
 </html>
